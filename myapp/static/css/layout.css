@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+    background-color: black;
+}
+
+
+.auth_form {
+    background-color: rgba(255,255,255,0.7);
+    height: 322px;
+    width: 455px;
+    border-radius: 2px;
+    padding: 30px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.text, form *{
+    width: 375px;
+    height: 33px;
+}
+
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+}
+
+form *{
+    margin: 7px auto;
+}
+
+button {
+    color: white;
+    background-color: #2672ae;
+}
+
+
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/normalize.css">
+    <link rel="stylesheet" href="/static/css/layout.css">
+    <title> My Website | {% block title %}{% endblock %}</title>
+  </head>
+  <body>
+    <div class="auth_form">
+      <div class="text">
+        Welcome
+      </div>
+      <form>
+        <input type="text" name="useranme" placeholder="username">
+        <input type="password" name="password" placeholder="password">
+        <button type="submit">{% block auth_name %}{% endblock %}</button>
+      </form>
+      <div class="text">
+        <span>
+          没有帐号？
+          <a href="/signup/">立即注册</a>
+        </span>
+      </div>
+    </div>
+    <script src="/static/js/jquery.min.js"></script>
+  </body>
+</html>
