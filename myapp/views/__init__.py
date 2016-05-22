@@ -1,11 +1,12 @@
 from .. import app
-from flask import render_template, redirect, url_for, flash
+from flask import render_template, redirect, url_for, flash, request, abort
 from ..models import User
 from ..forms import LoginForm, RegistrationForm
 from flask_login import login_user, login_required, logout_user
 from .. import db
 
 @app.route('/')
+@login_required
 def index():
     return render_template('index.html')
 
@@ -18,7 +19,9 @@ def login():
         if user and user.password == form.password.data:
             # login...
             login_user(user, form.remember_me.data)
-            return redirect(url_for('index'))
+            # using next when you use @login_required
+            next = request.args.get('next') # you can verify the next
+            return redirect(next or url_for('index'))
         flash('Invalid username or password.')
     return render_template('login.html', form=form)
 
