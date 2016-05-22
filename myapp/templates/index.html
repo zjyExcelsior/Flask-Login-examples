@@ -7,6 +7,12 @@
     <title>Zhu Jiongyao's Home Page</title>
   </head>
   <body>
-    <p>Hello World...</p>
+    {% if current_user.is_authenticated %}
+      <p>Welcome! {{ current_user.username }}</p>
+      <a href="/logout">logout</a>
+    {% else %}
+      <p>Welcome! Stranger</p>
+      <a href="/login">login</a>
+    {% endif %}
   </body>
 </html>

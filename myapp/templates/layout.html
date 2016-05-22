@@ -13,11 +13,13 @@
       <div class="text">
         Welcome
       </div>
+      {% block form %}
       <form>
         <input type="text" name="useranme" placeholder="username">
         <input type="password" name="password" placeholder="password">
         <button type="submit">{% block auth_name %}{% endblock %}</button>
       </form>
+      {% endblock %}
       <div class="text">
         <span>
           没有帐号？

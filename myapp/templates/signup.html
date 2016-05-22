@@ -2,6 +2,13 @@
 
 {% block title %}signup{% endblock %}
 
-{% block auth_name %}
-signup
+{% block form %}
+<form method="post">
+  {{ form.email(placeholder="email") }}
+  {{ form.username(placeholder="username") }}
+  {{ form.password(placeholder="your password") }}
+  {{ form.password2(placeholder="confirm password") }}
+  {{ form.submit() }}
+  {{ form.csrf_token }}
+</form>
 {% endblock %}

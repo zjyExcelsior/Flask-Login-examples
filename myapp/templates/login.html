@@ -2,6 +2,16 @@
 
 {% block title %}login{% endblock %}
 
-{% block auth_name %}
-login
+{% block form %}
+<form method="post">
+  {{ form.email(placeholder="email") }}
+  {{ form.password(placeholder="password") }}
+  {{ form.submit() }}
+  <div>{{ form.remember_me() }}{{ form.remember_me.label }}</div>
+  {{ form.csrf_token }}
+  {% if get_flashed_messages() %}
+  {{ get_flashed_messages()[0] }}
+  {% endif %}
+</form>
 {% endblock %}
+

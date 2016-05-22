@@ -32,9 +32,14 @@ body {
     justify-content: space-between;
 }
 
-.text, form *{
+.text, form>* {
     width: 375px;
     height: 33px;
+}
+
+input[type="checkbox"] {
+    width: auto;
+    height: auto;
 }
 
 .text {
@@ -48,9 +53,14 @@ form *{
     margin: 7px auto;
 }
 
-button {
+#submit {
     color: white;
     background-color: #2672ae;
+}
+
+form div {
+    display: flex;
+    justify-content: center;
 }
 
 
