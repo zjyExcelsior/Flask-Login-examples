@@ -7,6 +7,9 @@
     <title>Zhu Jiongyao's Home Page</title>
   </head>
   <body>
+    {% if get_flashed_messages() %}
+      <p>{{get_flashed_messages()[0]}}</p>
+    {% endif %}
     {% if current_user.is_authenticated %}
       <p>Welcome! {{ current_user.username }}</p>
       <a href="/logout">logout</a>
