@@ -2,6 +2,7 @@
 from flask import render_template, redirect, url_for, flash
 from flask import Blueprint
 from flask_login import current_user, login_required
+from ..utils.dbMethods import get_role_names
 
 main = Blueprint('main', __name__)
 
@@ -16,3 +17,7 @@ def admin():
         flash('you don\'t have the permission')
         return redirect(url_for('.index'))
     return '<p>hello world</p>'
+
+@main.route('/test_roles/')
+def test_roles():
+    return str(get_role_names())
