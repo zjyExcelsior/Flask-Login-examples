@@ -1,6 +1,7 @@
 # coding: utf-8
 from myapp import create_app, db
 
+
 def create_all_db(app):
     with app.app_context():
         db.create_all()
@@ -8,4 +9,4 @@ def create_all_db(app):
 if __name__ == '__main__':
     app = create_app('config')
     create_all_db(app)
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)
