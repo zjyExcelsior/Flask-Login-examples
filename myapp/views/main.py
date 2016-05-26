@@ -29,7 +29,7 @@ def test_roles():
 
 
 @main.route('/get_ip/')
-def test():
+def get_ip():
     # 得到访问者的ip地址
     return jsonify({'ip': request.environ.get('REMOTE_ADDR', request.remote_addr)})
     # return request.environ.get('HTTP_X_REAL_IP', request.remote_addr)
